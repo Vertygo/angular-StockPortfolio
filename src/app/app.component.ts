@@ -9,8 +9,7 @@ export class AppComponent {
   title = 'Milan works!';
   name = 'Milan';
 
-  changeName()
-  {
+  changeName()  {
     this.name = (this.name === 'Milan') ? 'Boris' : 'Milan';
   }
 }

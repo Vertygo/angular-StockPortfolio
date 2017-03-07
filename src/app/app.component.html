@@ -1,11 +1,12 @@
-<h1>
-  {{title}}  
-</h1>
-<div>Hello {{name}}</div>
-|<button (click)="changeName()">Change name</button>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <div class="container">
+        <a class="navbar-brand">Angular Router</a>
+        <ul class="nav navbar-nav" routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="portfolio">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="about">About</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="courses">Courses</a></li>
+        </ul>
+    </div>
+</nav>
 
-<ul>
-  <li *ngFor="let item of list">
-    {{item.name}}
-  </li>
-</ul>
+<router-outlet></router-outlet>

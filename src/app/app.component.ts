@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Milan works!';
+  name = 'Milan';
+
+  changeName()
+  {
+    this.name = (this.name === 'Milan') ? 'Boris' : 'Milan';
+  }
 }

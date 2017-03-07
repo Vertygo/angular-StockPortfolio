@@ -3,3 +3,9 @@
 </h1>
 <div>Hello {{name}}</div>
 |<button (click)="changeName()">Change name</button>
+
+<ul>
+  <li *ngFor="let item of list">
+    {{item.name}}
+  </li>
+</ul>

@@ -9,6 +9,12 @@ export class AppComponent {
   title = 'Milan works!';
   name = 'Milan';
 
+  list = [
+    {name: 'test' },
+     {name: 'test' }
+  ];
+
+
   changeName()  {
     this.name = (this.name === 'Milan') ? 'Boris' : 'Milan';
   }

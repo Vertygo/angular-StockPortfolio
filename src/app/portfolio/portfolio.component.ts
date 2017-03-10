@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-
-export class Holding {
-  id: number;
-  name: string;
-}
+import { InstrumentService, Holding } from '../services/instrumentService';
 
 
 @Component({
     moduleId: module.id,
     selector: 'app-portfolio',
-    templateUrl: 'portfolio.component.html'
+    templateUrl: 'portfolio.component.html',
+    providers: [InstrumentService]
 })
 export class PortfolioComponent implements OnInit {
-    constructor() { }
+    holdings: Holding[];
 
-    holdings: Holding[] = [
-        {id: 1, name: 'Milan'},
-        {id: 2, name: 'Boris'},
-    ];
+    constructor(private instrumentService: InstrumentService) { }
 
-    ngOnInit() { }
+    ngOnInit(): void {
+        this.instrumentService.getInstruments().then(h => this.holdings = h);
+    }
 }
 

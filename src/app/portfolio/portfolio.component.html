@@ -1,18 +1,14 @@
-<div>
-    <h1>portfolio monitor</h1>
-    <!--<ul>
-        <li *ngFor="let h of holdings">
-             <span >{{h.id}}</span> {{h.instrumentName}}
-        </li>
-    </ul>-->
+<div>     
     <table>
         <th>Id</th>
         <th>Name</th>
         <th>Position</th>
+        <th>Symbol</th>
         <tr *ngFor="let h of holdings">
             <td>{{h.id}}</td>
             <td>{{h.instrumentName}}</td>
             <td>{{h.position}}</td>
+            <td>{{h.symbol}}</td>
         </tr>
     </table>
 </div>

@@ -13,6 +13,10 @@ export class InstrumentService {
     getInstruments(): Promise<Holding[]> {
         return Promise.resolve(this.holdings);
     }
+
+    addHolding(h: Holding) {
+        this.holdings.concat(h);
+    }
 }
 
 export class Holding {

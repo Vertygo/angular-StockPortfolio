@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InstrumentService, Holding } from '../services/instrumentService';
+import { InstrumentService } from '../services/instrumentService';
+import { Holding } from '../services/holding';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class PortfolioComponent implements OnInit {
     constructor(private instrumentService: InstrumentService) { }
 
     ngOnInit(): void {
-        this.instrumentService.getInstruments().then(h => this.holdings = h);
+        this.instrumentService.getHoldings().then(h => this.holdings = h);
     }
 }
 

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Holding } from './holding';
 
 @Injectable()
 export class InstrumentService {
@@ -10,7 +11,7 @@ export class InstrumentService {
 
     constructor() { }
 
-    getInstruments(): Promise<Holding[]> {
+    getHoldings(): Promise<Holding[]> {
         return Promise.resolve(this.holdings);
     }
 
@@ -19,13 +20,4 @@ export class InstrumentService {
     }
 }
 
-export class Holding {
-  id: number;
-  instrumentName: string;
-  symbol: string;
-  position: number;
-  price: number;
-  entryPrice: number;
-  marketValue: number;
 
-}

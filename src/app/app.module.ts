@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { InstrumentService } from './services/instrumentService';
+import { NewHoldingComponent } from './portfolio/newHolding.component';
 
 const routes: Routes = [
     { path: '', component: PortfolioComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, PortfolioComponent
+    AppComponent, PortfolioComponent, NewHoldingComponent
   ],
   imports: [
     BrowserModule,

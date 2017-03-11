@@ -16,7 +16,8 @@ export class InstrumentService {
     }
 
     addHolding(h: Holding) {
-        this.holdings.concat(h);
+        h.id = this.holdings.length + 1;
+        this.holdings.push(h);
     }
 }
 

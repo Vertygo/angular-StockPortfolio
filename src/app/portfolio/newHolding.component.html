@@ -1,6 +1,6 @@
 <div class="">
     <h1>New Holding</h1>
-    <form>
+    <form  (ngSubmit)="OnSubmit()" #newHoldingForm="ngForm">
       <div class="form-group">
         <label for="instrumentName">Name</label>
         <input type="text" class="form-control" id="instrumentName" required [(ngModel)]="holding.instrumentName" name="instrumentName">
@@ -13,19 +13,7 @@
         <label for="position">Position</label>
         <input type="number" class="form-control" id="position" required [(ngModel)]="holding.position"  name="position">
       </div>
-      <button type="submit" class="btn btn-success">Submit</button>
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-success" (click)="OnSubmit()" data-dismiss="modal" [disabled]="!newHoldingForm.form.valid">Submit</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" (click)="newHolding(); newHoldingForm.reset()">Close</button>
     </form>
 </div>
-
-
-<!--export class Holding {
-  id: number;
-  instrumentName: string;
-  symbol: string;
-  position: number;
-  price: number;
-  entryPrice: number;
-  marketValue: number;
-
-}-->

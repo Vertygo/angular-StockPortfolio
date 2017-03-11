@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule, Router } from '@angular/router';
 
+import { GridModule } from '@progress/kendo-angular-grid';
+
 import { AppComponent } from './app.component';
 
 import { PortfolioComponent } from './portfolio/portfolio.component';
@@ -23,6 +25,7 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    GridModule,
     RouterModule.forRoot(routes),
   ],
   providers: [InstrumentService],

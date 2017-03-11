@@ -13,30 +13,30 @@ import { SortDescriptor, orderBy } from '@progress/kendo-data-query';
         // load the default theme (use correct path to node_modules)
         '../../../node_modules/@progress/kendo-theme-default/dist/all.css'
     ],
-   
+
 })
 export class PortfolioComponent implements OnInit {
     holdings: Holding[];
 
-    constructor(private instrumentService: InstrumentService) { 
+    constructor(private instrumentService: InstrumentService) {
           this.instrumentService.getHoldings().then(h => {
               this.holdings = h;
               this.load();
           });
-          
-      
+
+
     }
 
     ngOnInit(): void {
-      
-       
+
+
     }
 
     private sort: SortDescriptor[] = [];
     private gridView: GridDataResult;
- 
 
-    
+
+
 
     protected sortChange(sort: SortDescriptor[]): void {
         this.sort = sort;

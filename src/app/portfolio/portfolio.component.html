@@ -1,5 +1,9 @@
 <div>   
-    <a href="#" data-toggle="modal" data-target="#myModal">Position Entry</a>  
+  <template #dialogActions>
+          <button class="k-button k-primary" kendoButton (click)="addInstrument()">Submit</button>
+          <button class="k-button" kendoButton (click)="close()">Close</button>
+      </template>
+    <a href="#"  (click)="open(dialogActions)">Position Entry</a>  
      <kendo-grid [data]="gridView" [height]="370" [sortable]="{ mode: 'multiple' }"  (sortChange)="sortChange($event)">
             <kendo-grid-column field="id" title="ID" width="40">
             </kendo-grid-column>
@@ -23,9 +27,11 @@
         <h4 class="modal-title">Enter new position</h4>
       </div>
       <div class="modal-body">
-       <app-new-holding (childEvent)="load()"></app-new-holding>
+       <!--<app-new-holding (childEvent)="close('close')"></app-new-holding>-->
       </div>     
     </div>
 
   </div>
 </div>
+
+<div kendoDialogContainer></div>

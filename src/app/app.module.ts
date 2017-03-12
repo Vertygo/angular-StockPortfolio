@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { Routes, RouterModule, Router } from '@angular/router';
 
 import { GridModule } from '@progress/kendo-angular-grid';
+import { DialogModule } from '@progress/kendo-angular-dialog';
 
 import { AppComponent } from './app.component';
 
@@ -21,12 +22,14 @@ const routes: Routes = [
   declarations: [
     AppComponent, PortfolioComponent, NewHoldingComponent
   ],
+  entryComponents: [ NewHoldingComponent ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     GridModule,
     RouterModule.forRoot(routes),
+    DialogModule.forRoot()
   ],
   providers: [InstrumentService],
   bootstrap: [AppComponent]

@@ -12,11 +12,7 @@ export class NewHoldingComponent {
 
   holding = new Holding();
   @Output() childEvent = new EventEmitter<any>();
-    constructor(private instrumentService: InstrumentService){}
-
-
-
-
+  constructor(private instrumentService: InstrumentService){}
 
     newHolding() {
         this.holding = new Holding();

@@ -40,6 +40,7 @@ export class PortfolioComponent implements OnInit {
         this.dialogRef.close();
     }
     public close (){
+        this.load();
         this.dialogRef.close();
     }
     public open(actionTemplate: TemplateRef<any>) {

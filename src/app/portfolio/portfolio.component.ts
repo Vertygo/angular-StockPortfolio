@@ -13,9 +13,14 @@ import { NewHoldingComponent } from './newHolding.component';
     providers: [InstrumentService]
 
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit {    
     holdings: Holding[];
     public opened = false;
+
+    private sort: SortDescriptor[] = [];
+    private gridView: GridDataResult;
+    private dialogRef;
+
     constructor(private instrumentService: InstrumentService, private dialogService: DialogService) {
           this.instrumentService.getHoldings().then(h => {
               this.holdings = h;
@@ -28,10 +33,6 @@ export class PortfolioComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    private sort: SortDescriptor[] = [];
-    private gridView: GridDataResult;
-    private dialogRef;
-
     public addInstrument() {
         const childComp = this.dialogRef.content.instance;
         childComp.OnSubmit();
@@ -39,10 +40,12 @@ export class PortfolioComponent implements OnInit {
         this.load();
         this.dialogRef.close();
     }
+
     public close (){
         this.load();
         this.dialogRef.close();
     }
+    
     public open(actionTemplate: TemplateRef<any>) {
        this.dialogRef = this.dialogService.open({
           title: 'NewHolding',

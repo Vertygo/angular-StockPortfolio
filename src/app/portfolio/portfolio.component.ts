@@ -33,16 +33,14 @@ export class PortfolioComponent implements OnInit {
     private dialogRef;
 
     public addInstrument() {
-        const childComp = this.dialogRef.content.instance;
-        
-        childComp.OnSubmit();
+        const userInfo = this.dialogRef.content.instance;
+        userInfo.OnSubmit();
         this.load();
         this.dialogRef.close();
     }
-    public close () {
+    public close (){
         this.dialogRef.close();
     }
-
     public open(actionTemplate: TemplateRef<any>) {
        this.dialogRef = this.dialogService.open({
           title: 'NewHolding',

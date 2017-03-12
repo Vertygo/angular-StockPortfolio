@@ -1,9 +1,10 @@
 <div>   
   <template #dialogActions>
-          <button class="k-button k-primary" kendoButton (click)="addInstrument()">Submit</button>
+          <button type="submit" class="k-button k-primary" kendoButton (click)="addInstrument()">Submit</button>
           <button class="k-button" kendoButton (click)="close()">Close</button>
       </template>
-    <a href="#"  (click)="open(dialogActions)">Position Entry</a>  
+    <a href="#"  (click)="open(dialogActions)">Position Entry submit on Dialog</a>  
+    <a href="#"  *ngIf="!opened" (click)="openForm()" style="padding-left: 30px;color:red">Kendo with submit on form</a>  
      <kendo-grid [data]="gridView" [height]="370" [sortable]="{ mode: 'multiple' }"  (sortChange)="sortChange($event)">
             <kendo-grid-column field="id" title="ID" width="40">
             </kendo-grid-column>
@@ -17,6 +18,12 @@
    
 </div>
 
+ <kendo-dialog title="Please confirm" *ngIf="opened" (close)="addAndClose()">
+            <app-new-holding (childEvent)="addAndClose()"></app-new-holding>
+            <kendo-dialog-actions>
+                <button class="k-button k-primary" kendoButton (click)="addAndClose()">Close</button>
+            </kendo-dialog-actions>
+        </kendo-dialog>
 <!--<div id="myModal" #angModal class="modal fade" role="dialog">
   <div class="modal-dialog">
 

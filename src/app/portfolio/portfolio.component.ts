@@ -35,6 +35,7 @@ export class PortfolioComponent implements OnInit {
     public addInstrument() {
         const childComp = this.dialogRef.content.instance;
         childComp.OnSubmit();
+
         this.load();
         this.dialogRef.close();
     }
@@ -49,6 +50,7 @@ export class PortfolioComponent implements OnInit {
 
           actions: actionTemplate
        });
+
     }
 
     protected sortChange(sort: SortDescriptor[]): void {
@@ -61,6 +63,15 @@ export class PortfolioComponent implements OnInit {
             data: orderBy(this.holdings, this.sort),
             total: this.holdings.length
         };
+    }
+
+    public openForm() {
+      this.opened = true;
+    }
+
+    public addAndClose() {
+        this.load();
+        this.opened = false;
     }
 }
 

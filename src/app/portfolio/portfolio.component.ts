@@ -33,8 +33,8 @@ export class PortfolioComponent implements OnInit {
     private dialogRef;
 
     public addInstrument() {
-        const userInfo = this.dialogRef.content.instance;
-        userInfo.OnSubmit();
+        const childComp = this.dialogRef.content.instance;
+        childComp.OnSubmit();
         this.load();
         this.dialogRef.close();
     }

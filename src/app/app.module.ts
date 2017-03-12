@@ -12,15 +12,22 @@ import { AppComponent } from './app.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { InstrumentService } from './services/instrumentService';
 import { NewHoldingComponent } from './portfolio/newHolding.component';
+import { StatsComponent } from './portfolio/stats.component';
+import { ChartsModule } from '@progress/kendo-angular-charts';
 
 const routes: Routes = [
     { path: '', component: PortfolioComponent },
-    { path: 'portfolio', component: PortfolioComponent }
+    { path: 'portfolio', component: PortfolioComponent },
+    { path: '', outlet: 'bottom', component: StatsComponent} ,
+    { path: 'stats', outlet: 'bottom', component: StatsComponent} 
+    
+        
+    
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, PortfolioComponent, NewHoldingComponent
+    AppComponent, PortfolioComponent, NewHoldingComponent,StatsComponent
   ],
   entryComponents: [ NewHoldingComponent ],
   imports: [
@@ -29,7 +36,7 @@ const routes: Routes = [
     FormsModule,
     HttpModule,
     GridModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes), ChartsModule
     
   ],
   providers: [InstrumentService, DialogService],

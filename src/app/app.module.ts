@@ -19,10 +19,7 @@ const routes: Routes = [
     { path: '', component: PortfolioComponent },
     { path: 'portfolio', component: PortfolioComponent },
     { path: '', outlet: 'bottom', component: StatsComponent} ,
-    { path: 'stats', outlet: 'bottom', component: StatsComponent} 
-    
-        
-    
+    { path: 'stats', outlet: 'bottom', component: StatsComponent}
 ];
 
 @NgModule({
@@ -37,7 +34,6 @@ const routes: Routes = [
     HttpModule,
     GridModule,
     RouterModule.forRoot(routes), ChartsModule
-    
   ],
   providers: [InstrumentService, DialogService],
   bootstrap: [AppComponent]

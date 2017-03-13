@@ -17,7 +17,7 @@ import { ChartsModule } from '@progress/kendo-angular-charts';
 
 const routes: Routes = [
     { path: '', component: PortfolioComponent },
-    { path: 'portfolio', component: PortfolioComponent },
+    { path: 'portfolio', component: PortfolioComponent, children : [{ path: 'stats', outlet: 'bottom', component: StatsComponent}] },
     { path: '', outlet: 'bottom', component: StatsComponent} ,
     { path: 'stats', outlet: 'bottom', component: StatsComponent}
 ];

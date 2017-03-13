@@ -1,4 +1,5 @@
-export class Instrument{
-  instrumentName: string;
-  symbol: string;
+export class Instrument {
+  Id: number;
+  InstrumentID: string;
+  BloombergTicker: string;
 }

@@ -14,17 +14,19 @@ import { InstrumentService } from './services/instrumentService';
 import { NewHoldingComponent } from './portfolio/newHolding.component';
 import { StatsComponent } from './portfolio/stats.component';
 import { ChartsModule } from '@progress/kendo-angular-charts';
+import { InstrumentsComponent } from './instruments/instruments.component';
 
 const routes: Routes = [
-    { path: '', component: PortfolioComponent },
-    { path: 'portfolio', component: PortfolioComponent, children : [{ path: 'stats', outlet: 'bottom', component: StatsComponent}] },
+    { path: '', component: PortfolioComponent},
+    { path: 'portfolio', component: PortfolioComponent },
+      { path: 'instruments', component: InstrumentsComponent },
     { path: '', outlet: 'bottom', component: StatsComponent} ,
     { path: 'stats', outlet: 'bottom', component: StatsComponent}
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, PortfolioComponent, NewHoldingComponent,StatsComponent
+    AppComponent, PortfolioComponent, NewHoldingComponent,StatsComponent, InstrumentsComponent
   ],
   entryComponents: [ NewHoldingComponent ],
   imports: [
